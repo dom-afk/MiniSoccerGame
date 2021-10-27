@@ -19,10 +19,9 @@ public class PlayerCollection implements Iterable<GamePlayer> {
 	}
 	
 	//iterates through list, returns player with matching name
-	//toString must be overwritten in player subclasses to output player name
 	public GamePlayer get(String name) {
 		 for(GamePlayer gPlayer : pList) {
-		        if(gPlayer.toString().equals(name)) {
+		        if(gPlayer.getPlayerName().equals(name)) {
 		            return gPlayer;
 		        }
 		    }
