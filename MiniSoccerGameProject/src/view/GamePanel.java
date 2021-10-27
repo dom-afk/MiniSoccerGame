@@ -52,7 +52,8 @@ public class GamePanel extends JPanel {
 		paintPenaltyLine(g);
 		paintGoal(g);
 		paintTimer(g);
-		paintPlayers(g);
+		// Commented out the code here until player classes are implemented, otherwise returns a nullpointer exception at runtime
+		//paintPlayers(g);
 		paintBall(g);
 		paintStatistics(g);
 	}
@@ -92,9 +93,8 @@ public class GamePanel extends JPanel {
 
 	
 	private void paintPlayers(Graphics g) {
-		// Commented out the code here until player classes are implemented, otherwise returns a nullpointer exception at runtime
 		
-		/*	PlayerCollection gamePlayers = game.getGamePlayers();
+			PlayerCollection gamePlayers = game.getGamePlayers();
 		for (GamePlayer player : gamePlayers) {
 			g.setColor(player.getPlayerColor());
 			g.drawOval(player.getPlayerPosition().x, player.getPlayerPosition().y, 30, 30);
@@ -107,7 +107,7 @@ public class GamePanel extends JPanel {
 			g.setFont(uiFont);
 			g.drawString(player.getPlayerName(), player.getPlayerPosition().x - (int) (1.8 * player.getPlayerName().length()), player.getPlayerPosition().y + 85);
 		} 
-		*/
+		
 	}  
 
 	private void paintBall(Graphics g) {
