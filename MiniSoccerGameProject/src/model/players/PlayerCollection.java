@@ -1,26 +1,36 @@
 package model.players;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class PlayerCollection implements Iterable<GamePlayer> {
+
+	//List of players
+    private List<GamePlayer> pList = new ArrayList<GamePlayer>(); 
+
+
+	public void add(GamePlayer player) {
+		pList.add(player);
+	}
+
+	public Iterator<GamePlayer> iterator() {
+		return new PlayerCollectionIterator(pList);
+	}
+	
+	//iterates through list, returns player with matching name
+	//toString must be overwritten in player subclasses to output player name
+	public GamePlayer get(String name) {
+		 for(GamePlayer gPlayer : pList) {
+		        if(gPlayer.toString().equals(name)) {
+		            return gPlayer;
+		        }
+		    }
+		    return null;
+	}
 
 	public void sort() {
 		// TODO Auto-generated method stub
 		
 	}
-
-	public void add(GamePlayer player) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public Iterator<GamePlayer> iterator() {
-		return new PlayerCollectionIterator();
-	}
-	
-	public GamePlayer get(String player) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
