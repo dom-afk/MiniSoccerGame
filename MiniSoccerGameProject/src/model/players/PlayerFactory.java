@@ -21,10 +21,10 @@ public class PlayerFactory {
 		}
 		
 		public GamePlayer getPlayer(String type) {
-			if (type.equals("striker"))
-				return new Striker("striker", LIST_COL[ran.nextInt(LIST_COL.length)]);
+			if (type.equals("Striker"))
+				return new Striker("Striker", LIST_COL[ran.nextInt(LIST_COL.length)]);
 			else
-				return new Goalkeeper("goalkeeper",(LIST_COL[ran.nextInt(LIST_COL.length)] ));
+				return new Goalkeeper("Goalkeeper",(LIST_COL[ran.nextInt(LIST_COL.length)] ));
 			
 		}
 

@@ -25,8 +25,8 @@ public class SoccerGame {
 		SoccerBall.getSoccerBall().resetSoccerBall();
 		PlayerFactory playerFactory = new PlayerFactory();
 		gamePlayers = new PlayerCollection();
-		gamePlayers.add(playerFactory.getPlayer("striker"));
-		gamePlayers.add(playerFactory.getPlayer("goalkeeper"));
+		gamePlayers.add(playerFactory.getPlayer("Striker"));
+		gamePlayers.add(playerFactory.getPlayer("Goalkeeper"));
 		startGame();
 	}
 

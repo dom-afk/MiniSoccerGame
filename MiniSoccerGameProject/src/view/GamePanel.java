@@ -53,7 +53,7 @@ public class GamePanel extends JPanel {
 		paintGoal(g);
 		paintTimer(g);
 		// Commented out the code here until player classes are implemented, otherwise returns a nullpointer exception at runtime
-		//paintPlayers(g);
+		paintPlayers(g);
 		paintBall(g);
 		paintStatistics(g);
 	}
