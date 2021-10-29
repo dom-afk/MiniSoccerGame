@@ -2,13 +2,19 @@ package model.players;
 
 public class PlayerStatistics {
 
+	private int points = 0;
+	
 	public Integer getStatistics() {
-		// set as 0 for now so that there will be no errors for null value
-				return 0;
+				return points;
 	}
 
 	public void setStatistics(Integer newStatistics) {
-		// TODO Auto-generated method stub
+		points = newStatistics;
+	}
+	
+	@Override
+	public String toString() {
+		return Integer.toString(points);
 	}
 
 }
