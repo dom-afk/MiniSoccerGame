@@ -13,18 +13,30 @@ public class PlayerCollectionIterator implements Iterator<GamePlayer>{
     //index of element in list
     private int index = 0;
 
-    //constructor, initializes list
-    public PlayerCollectionIterator( Collection<GamePlayer> collection) {
+    /**
+	 * This is a constructor to initialize a list
+	 * 
+	 * @param collection a colection of game players
+	 */
+    public PlayerCollectionIterator(Collection<GamePlayer> collection) {
     	this.playerList =  new ArrayList<GamePlayer>(collection);
     }
     
-    //returns true if there exists a next element in the list
+    /**
+	 * This figures out whether there exists a next element in the list
+	 * 
+	 * @return true if a next element exists, otherwise false
+	 */
 	@Override
 	public boolean hasNext() {
 		return index < playerList.size();
 	}
 
-	//returns next element in list
+	/**
+	 * This returns the next element in the list
+	 * 
+	 * @return a game player if exists
+	 */
 	@Override
 	public GamePlayer next() {
 		return playerList.get(index++);

@@ -17,6 +17,12 @@ public class SoccerGame {
 
 	private final PlayerCollection gamePlayers;
 
+	/**
+	 * This is a default constructor
+	 * 
+	 * The timer is set for 60 seconds and the number of goals initialized as zero
+	 * A soccer ball is set to the initial position, and new game players are added to a collection 
+	 */
 	public SoccerGame() {
 		timeRemaining = 60;
 		goal = 0;
@@ -30,6 +36,10 @@ public class SoccerGame {
 		startGame();
 	}
 
+	/**
+	 * This initializes a new game
+	 * 
+	 */
 	private void startGame() {
 		Timer timer = new Timer();
 		TimerTask timerTask = new TimerTask() {
@@ -57,34 +67,74 @@ public class SoccerGame {
 		timer.schedule(timerTask, 1000, 1000);
 	}
 
+	/**
+	 * This return the remaining time left
+	 * 
+	 * @return remaining time left
+	 */
 	public Integer getTimeRemaining() {
 		return timeRemaining;
 	}
 
+	/**
+	 * This sets a new remaining time 
+	 * 
+	 * @param timeRemaining an Integer of new time
+	 */
 	public void setTimeRemaining(Integer timeRemaining) {
 		this.timeRemaining = timeRemaining;
 	}
 
+	/**
+	 * This return the number of goals achieved
+	 * 
+	 * @return the number of goals in total
+	 */
 	public Integer getGoal() {
 		return goal;
 	}
 
+	/**
+	 * This sets a new number of goals
+	 * 
+	 * @param newGoal an Integer showing a new number of goals
+	 */
 	public void setGoal(Integer newGoal) {
 		goal = newGoal;
 	}
 
+	/**
+	 * This shows whether the game is paused
+	 * 
+	 * @return true if the game is paused, otherwise false
+	 */
 	public Boolean isPaused() {
 		return isPaused;
 	}
 
+	/**
+	 * This sets the game as paused or not paused
+	 * 
+	 * @param paused true or false 
+	 */
 	public void setPaused(Boolean paused) {
 		isPaused = paused;
 	}
 
+	/**
+	 * This shows whether the game is over
+	 * 
+	 * @return true if the game is over, otherwise false
+	 */
 	public Boolean isOver() {
 		return isOver;
 	}
 
+	/**
+	 * This sets the game as over or still continuing
+	 * 
+	 * @param over true or false 
+	 */
 	public void setOver(Boolean over) {
 		isOver = over;
 	}
@@ -93,6 +143,14 @@ public class SoccerGame {
 		return gamePlayers;
 	}
 
+	/**
+	 * 
+	 * This instructs how a goalkeeper is supposed to move
+	 * If a soccer ball is in the area of the goalkeeper, then it will grab the ball and shoot back
+	 * Then, the number of caught balls increment by one
+	 * Otherwise, the goalkeeper keeps moving randomly
+	 * 
+	 */
 	public void automateGoalkeeper() {
 		SoccerBall soccerBall = SoccerBall.getSoccerBall();
 		Goalkeeper goalkeeper = (Goalkeeper) gamePlayers.get("Goalkeeper");
@@ -104,11 +162,21 @@ public class SoccerGame {
 			goalkeeper.moveRandomly();
 		}
 	}
-
+	
+	/**
+	 * This shows whether the ball is shot in the goal gate 
+	 * 
+	 * @return true if it is a successful goal, otherwise false
+	 */
 	public boolean isScored() {
 		return SoccerBall.getSoccerBall().inGate();
 	}
 
+	/**
+	 * This returns a player, striker
+	 * 
+	 * @return the player, striker
+	 */
 	public GamePlayer getActivePlayer() {
 		return gamePlayers.get("Striker");
 	}
