@@ -16,7 +16,7 @@ public class GameListener implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-
+		
 	}
 
 	@Override

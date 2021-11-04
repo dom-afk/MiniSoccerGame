@@ -6,20 +6,17 @@ import java.util.Random;
 import java.awt.Color;
 
 public class PlayerFactory {
-	
-		private Random ran;
+			
+		final private Color strikerRed = Color.RED;
+		final private Color goalKeeperBlack = Color.BLACK;
+
 		
-		final private Color[] LIST_COL =
-			{Color.RED, Color.ORANGE, Color.YELLOW, Color.GREEN, Color.BLUE, Color.MAGENTA,
-				Color.BLACK, Color.CYAN, Color.PINK};
 		
 		/**
 		 * This is a default constructor
 		 */
 		public PlayerFactory() {
-			
-			ran = new Random();
-			
+						
 		}
 		
 		/**
@@ -31,9 +28,9 @@ public class PlayerFactory {
 		 */
 		public GamePlayer getPlayer(String type) {
 			if (type.equals("Striker"))
-				return new Striker("Striker", LIST_COL[ran.nextInt(LIST_COL.length)]);
+				return new Striker("Striker", strikerRed);
 			else
-				return new Goalkeeper("Goalkeeper",(LIST_COL[ran.nextInt(LIST_COL.length)] ));
+				return new Goalkeeper("Goalkeeper", goalKeeperBlack);
 			
 		}
 
