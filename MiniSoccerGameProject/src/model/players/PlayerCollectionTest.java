@@ -11,7 +11,7 @@ import java.util.Random;
 
 import org.junit.jupiter.api.Test;
 
-class PlayerCollectionTest{
+public class PlayerCollectionTest{
 
 	@Test
 	public void getGamePlayerTest() {

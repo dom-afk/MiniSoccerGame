@@ -19,10 +19,10 @@ import org.junit.jupiter.api.Test;
  * @author gbemi
  *
  */
-class PlayerFactoryTest {
+public class PlayerFactoryTest {
 
 	@Test
-	void getPlayerFactoryTest() {
+	public void getPlayerFactoryTest() {
 		PlayerFactory test = new PlayerFactory();
 			
 		GamePlayer gotStriker = new Striker("Striker", Color.RED);

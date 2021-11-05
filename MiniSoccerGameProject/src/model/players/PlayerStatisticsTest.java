@@ -13,10 +13,10 @@ import org.junit.jupiter.api.Test;
  * @author gbemi
  *
  */
-class PlayerStatisticsTest {
+public class PlayerStatisticsTest {
 
 	@Test
-	void testGetStatistic() {
+	public void testGetStatistic() {
 		PlayerStatistics testGetStat = new PlayerStatistics();
 		
 		Random rand = new Random();
@@ -29,7 +29,7 @@ class PlayerStatisticsTest {
 	}
 	
 	@Test
-	void testToString() {
+	public void testToString() {
 		PlayerStatistics testGetStat = new PlayerStatistics();
 		
 		Random rand = new Random();

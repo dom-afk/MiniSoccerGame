@@ -10,6 +10,8 @@ import java.util.Collection;
 
 import org.junit.Test;
 
+import model.SoccerGameTest;
+
 /*
  * @Misato
  */
@@ -35,5 +37,26 @@ public class PlayerCollectionIteratorTest {
 			}
 		}
 		assertEquals(true, isRightPlayer);
+	}
+	
+	@Test
+	public void test() {
+		GamePlayerTest test1 = new GamePlayerTest();
+		test1.constructorTest();
+		test1.updateStatisticsTest();
+		
+		PlayerFactoryTest test2 = new PlayerFactoryTest();
+		test2.getPlayerFactoryTest();
+		
+		PlayerStatisticsTest test3 = new PlayerStatisticsTest();
+		test3.testGetStatistic();
+		test3.testToString();
+		
+		PlayerCollectionTest test4 = new PlayerCollectionTest();
+		test4.getGamePlayerTest();
+		test4.getCollectionOfGamePlayersTest();
+		
+		SoccerGameTest test5 = new SoccerGameTest();
+		test5.testAll();
 	}
 }
