@@ -10,11 +10,21 @@ public class MenubarListener implements ActionListener {
 
 	private final GamePanel gamePanel;
 
+	/*
+	 * This is a constructor to add interface to the menu bar.
+	 * 
+	 * @param panel The interface to add
+	 */
 	public MenubarListener(GamePanel panel) {
 		gamePanel = panel;
 	}
 
 
+	/*
+	 * This method shows what actions will be taken when buttons on the menu bar are clicked.
+	 * 
+	 * @param e The action we took such as clicking one of menu bar buttons
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		SoccerGame soccerGame = gamePanel.getGame();

@@ -17,6 +17,9 @@ public class GamePanel extends JPanel {
 
 	private SoccerGame game;
 
+	/*
+	 * This is a default constructor which sets up the main game interface.
+	 */
 	public GamePanel() {
 		super(null);
 		super.setBackground(new Color(112, 176, 49));
@@ -25,10 +28,16 @@ public class GamePanel extends JPanel {
 		setupRepaint();
 	}
 
+	/*
+	 * This method instantiates a new soccer game.
+	 */
 	public void setupSoccerGame() {
 		game = new SoccerGame();
 	}
 
+	/*
+	 * This method re-setup the interface.
+	 */
 	private void setupRepaint() {
 		java.util.Timer timer = new Timer();
 		TimerTask repaintTask = new TimerTask() {
@@ -40,10 +49,20 @@ public class GamePanel extends JPanel {
 		timer.schedule(repaintTask, 0, 10);
 	}
 
+	/*
+	 * This method obtains a soccer game as an object.
+	 * 
+	 * @return A soccer game
+	 */
 	public SoccerGame getGame() {
 		return game;
 	}
 
+	/*
+	 * This method allows the game panel to paint all the components.
+	 * 
+	 * @param The graphics for the components
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -57,6 +76,11 @@ public class GamePanel extends JPanel {
 		paintStatistics(g);
 	}
 
+	/*
+	 * When the game is paused, this method paints components for the pause.
+	 * 
+	 * @param The graphics for the components
+	 */
 	private void paintPausedText(Graphics g) {
 		if (getGame().isPaused()) {
 			g.setColor(Color.red);
@@ -65,6 +89,11 @@ public class GamePanel extends JPanel {
 		}
 	}
 
+	/*
+	 * This methods paints and shapes a gate.
+	 * 
+	 * @param The graphics for the components
+	 */
 	private void paintGate(Graphics g) {
 		g.setColor(Color.white);
 		g.fillRect(200, 10, 200, 50);
@@ -73,24 +102,43 @@ public class GamePanel extends JPanel {
 		g.drawString("Gate", 280, 40);
 	}
 
+	/*
+	 * This methods paints a line to divide the active player's side and goalkeeper's side.
+	 * 
+	 * @param The graphics for the components
+	 */
 	private void paintPenaltyLine(Graphics g) {
 		g.setColor(Color.darkGray);
 		g.drawLine(0, 200, 600, 200);
 	}
 
+	/*
+	 * This methods creates an interface for a timer.
+	 * 
+	 * @param The graphics for the components
+	 */
 	private void paintTimer(Graphics g) {
 		g.setColor(Color.black);
 		g.setFont(uiFont);
 		g.drawString("Time: " + getGame().getTimeRemaining(), 20, 25);
 	}
 
+	/*
+	 * This methods creates an interface for a goal count.
+	 * 
+	 * @param The graphics for the components
+	 */
 	private void paintGoal(Graphics g) {
 		g.setColor(Color.black);
 		g.setFont(uiFont);
 		g.drawString("Goal: " + game.getGoal(), 20, 50);
 	}
 
-	
+	/*
+	 * This methods creates an interface for both players.
+	 * 
+	 * @param The graphics for the components
+	 */
 	private void paintPlayers(Graphics g) {
 		
 			PlayerCollection gamePlayers = game.getGamePlayers();
@@ -109,12 +157,22 @@ public class GamePanel extends JPanel {
 		
 	}  
 
+	/*
+	 * This methods creates an interface for a ball.
+	 * 
+	 * @param The graphics for the components
+	 */
 	private void paintBall(Graphics g) {
 		SoccerBall soccerBall = SoccerBall.getSoccerBall();
 		g.setColor(soccerBall.getColor());
 		g.fillOval(soccerBall.getPosition().x, soccerBall.getPosition().y, 20, 20);
 	}
 
+	/*
+	 * This methods creates an interface for statistics which appears when a game is over.
+	 * 
+	 * @param The graphics for the components
+	 */
 	private void paintStatistics(Graphics g) {
 		if (getGame().isOver()) {
 			g.setColor(Color.red);

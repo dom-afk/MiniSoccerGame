@@ -9,6 +9,9 @@ import javax.swing.*;
 
 public class MiniSoccerApp {
 
+	/*
+	 * This is a client side implementation.
+	 */
 	public static void main(String[] args) {
 		JFrame gameFrame = new JFrame("Mini Soccer");
 		GamePanel gamePanel = new GamePanel();

@@ -9,16 +9,31 @@ import java.awt.event.KeyListener;
 public class GameListener implements KeyListener {
 
 	private final GamePanel gamePanel;
-
+	
+	/*
+	 * This is a constructor to set up a main game panel
+	 * 
+	 * @param panel The interface we set for the game
+	 */
 	public GameListener(GamePanel panel) {
 		gamePanel = panel;
 	}
 
+	/*
+	 * This method shows players' behaviors when typing keys
+	 * 
+	 * @param e This is the event of keys
+	 */
 	@Override
 	public void keyTyped(KeyEvent e) {
 		
 	}
-
+	
+	/*
+	 * This methods shows how players behave when pressing arrow keys or a space bar
+	 * 
+	 * @param e This is the event of keys
+	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
 		SoccerGame soccerGame = gamePanel.getGame();
@@ -45,6 +60,11 @@ public class GameListener implements KeyListener {
 		}
 	}
 
+	/*
+	 * This method shows how players behave when we release keys
+	 * 
+	 * @param e This is the event of keys
+	 */
 	@Override
 	public void keyReleased(KeyEvent e) {
 
