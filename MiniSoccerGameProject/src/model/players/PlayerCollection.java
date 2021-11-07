@@ -2,8 +2,10 @@ package model.players;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+
 
 public class PlayerCollection implements Iterable<GamePlayer> {
 
@@ -66,7 +68,6 @@ public class PlayerCollection implements Iterable<GamePlayer> {
 	}
 
 	public void sort() {
-		// TODO Auto-generated method stub
-		
+		Collections.sort((List<GamePlayer>) collection);
 	}
 }
