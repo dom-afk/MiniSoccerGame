@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Random;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -15,31 +16,29 @@ import org.junit.jupiter.api.Test;
  */
 public class PlayerStatisticsTest {
 
+	Random rand = new Random();
+	PlayerStatistics testGetStat = new PlayerStatistics();
+	int min;
+	int max;
+	Integer testPoint;		
+	
+		
+	@BeforeEach
+	public void constructTheDatabase() {
+		min = 0;
+		max = 31;
+		testPoint = rand.nextInt(max - min + min);
+		testGetStat.setStatistics(testPoint);
+	}
+	
 	@Test
 	public void testGetStatistic() {
-		PlayerStatistics testGetStat = new PlayerStatistics();
-		
-		Random rand = new Random();
-		int min = 0;
-		int max = 31;
-		int testPoint = rand.nextInt(max - min + min);
-		
-		testGetStat.setStatistics(testPoint);
 		assertTrue(testGetStat.getStatistics() == testPoint);
 	}
 	
 	@Test
-	public void testToString() {
-		PlayerStatistics testGetStat = new PlayerStatistics();
-		
-		Random rand = new Random();
-		int min = 0;
-		int max = 31;
-		Integer testPoint = rand.nextInt(max - min + min);
-		testGetStat.setStatistics(testPoint);
-
+	public void testToString() {		
 		String stringTestPoint = testPoint.toString();	
-		
 		assertEquals(stringTestPoint, testGetStat.toString());
 	}
 

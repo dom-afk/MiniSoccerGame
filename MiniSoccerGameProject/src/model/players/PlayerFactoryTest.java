@@ -29,17 +29,16 @@ public class PlayerFactoryTest {
 		GamePlayer gotGoalkeeper = new Goalkeeper("Goalkeeper", Color.BLACK);
 		
 		//Check if the Classes are equal
-		assertEquals(test.getPlayer("Striker").getClass(), gotStriker.getClass());
-		assertEquals(test.getPlayer("Goalkeeper").getClass(), gotGoalkeeper.getClass());
+		assertEquals(gotStriker.getClass(), test.getPlayer("Striker").getClass());
+		assertEquals(gotGoalkeeper.getClass(), test.getPlayer("Goalkeeper").getClass());
 		
 		//Check if the playerNames are equal
-		assertEquals(test.getPlayer("Striker").getPlayerName(), gotStriker.getPlayerName());
-		assertEquals(test.getPlayer("Goalkeeper").getPlayerName(), gotGoalkeeper.getPlayerName());
+		assertEquals(gotStriker.getPlayerName(), test.getPlayer("Striker").getPlayerName());
+		assertEquals(gotGoalkeeper.getPlayerName(), test.getPlayer("Goalkeeper").getPlayerName());
 
 		//Check if the playerColours are equal
-		assertEquals(test.getPlayer("Striker").getPlayerColor(), gotStriker.getPlayerColor());
-		assertEquals(test.getPlayer("Goalkeeper").getPlayerColor(), gotGoalkeeper.getPlayerColor());
-
+		assertEquals(gotStriker.getPlayerColor(), test.getPlayer("Striker").getPlayerColor());
+		assertEquals(gotGoalkeeper.getPlayerColor(), test.getPlayer("Goalkeeper").getPlayerColor());
 		
 	}
 
